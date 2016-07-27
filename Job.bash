@@ -9,6 +9,8 @@ sudo apt-get install git-lfs
 
 # clone repository and set GitHub credentials
 cd /home
+echo 'Host github.com
+  StrictHostKeyChecking no' > ~/.ssh/config
 git clone git@github.com:laurajanegraham/ec2test.git
 
 # checkout new branch named after the instance id
