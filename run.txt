@@ -1,0 +1,4 @@
+running
+  '/usr/lib/R/bin/R --slave --no-restore --no-save --no-restore --file=occ_mod.R'
+
+Fatal error: cannot open file 'occ_mod.R': No such file or directory
