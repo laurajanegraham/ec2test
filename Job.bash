@@ -26,4 +26,4 @@ git commit -m "ec2 run complete"
 git push -u origin $iid
 
 # kill instance
-sudo halt
+#sudo halt
