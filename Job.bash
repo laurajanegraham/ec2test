@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# assign a shell variable run with the name of the script
-run=GenericEC2Run
-
 # install apt-get
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
@@ -25,7 +22,7 @@ git checkout -b $iid
 
 # run the job script
 #Rscript -e "rmarkdown::render('SingleSpecies.Rmd')" &> run.txt
-Rscript --no-save --no-restore --verbose GenericEC2Run
+Rscript --no-save --no-restore --verbose GenericEC2Run.R
 
 # push commits to local branch and push to github
 git add --all
@@ -33,4 +30,4 @@ git commit -m "ec2 run complete"
 git push -u origin $iid
 
 # kill instance
-sudo halt
+#sudo halt
