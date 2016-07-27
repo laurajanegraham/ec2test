@@ -20,8 +20,9 @@ wait_for_port() {
 }
 wait_for_port
 
-# secure copy the GitHub private key
-scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/GrahamAmazon.pem ~/.ssh/id_rsa ubuntu@$dns:~/.ssh/ 
+# Set up Github access key forwarding 
+echo 'Host *.eu-west-1.compute.amazonaws.com
+   ForwardAgent yes' > ~/.ssh/config
   
 # use SSH to remotely change the ownership of home and R library location so that we can make changes
 ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/GrahamAmazon.pem ubuntu@$dns "sudo chown -R ubuntu:ubuntu /home"
